@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bundle exec irb -r ./script/lib/console.rb --prompt-mode simple

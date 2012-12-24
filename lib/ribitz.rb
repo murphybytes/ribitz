@@ -1,0 +1,2 @@
+
+require 'ribitz/publisher'

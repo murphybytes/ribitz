@@ -1,0 +1,8 @@
+development: &defaults
+  log_level: debug	    
+
+test:
+  <<: *defaults
+
+production:
+  log_level: info
