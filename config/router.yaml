@@ -1,0 +1,10 @@
+development: &defaults
+  log-level: DEBUG 
+  listen-port: 5556
+  notification-port: 5557
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
