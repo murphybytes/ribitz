@@ -1,6 +1,8 @@
 require 'yaml'
+require 'optparse'
+require 'ostruct'
 
-$: << File.join( Dir.pwd, 'lib', 'router' )
+$: << File.join( Dir.pwd, 'lib', 'ribitz', 'router' )
 
 ENV['RIBITZ_ENV'] ||= 'development'
 APP_CONFIG=YAML.load_file('config/router.yaml')[ENV['RIBITZ_ENV']]
@@ -22,4 +24,23 @@ LOGGER.level = case APP_CONFIG.fetch('log-level', 'DEBUG' ).upcase
 
 require 'router'
 
-Ribitz::Router.run
+options = {}
+
+parser = OptionParser.new do | opts |
+  opts.banner = "Usage: router [options]"
+  opts.separator ""
+  opts.separator "Specific Options:"
+
+  opts.on("-f", "--graph-file FILE", "Path of graph file" ) do | val |
+    options[:graph_file] = val
+  end
+
+  opts.on_tail("-h", "--help", "Show this message" ) do 
+    puts opts
+    exit
+  end
+end
+
+parser.parse!(ARGV)
+
+Ribitz::Router.run options

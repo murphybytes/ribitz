@@ -1,11 +1,17 @@
+GIT
+  remote: git://github.com/murphybytes/ffi-rzmq.git
+  revision: 1d79236a63d649c4ece6aa0b0df2d4c760aeae79
+  tag: 0.9.9
+  specs:
+    ffi-rzmq (0.9.9)
+      ffi
+
 GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.1.3)
     ffi (1.2.0)
     ffi (1.2.0-java)
-    ffi-rzmq (0.9.6)
-      ffi
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -20,5 +26,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ffi-rzmq
+  ffi-rzmq!
   rspec
