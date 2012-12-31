@@ -1,7 +1,6 @@
-$: << File.join( Dir.pwd, 'lib', 'router' )
 
-require 'ffi-rzmq'
-require 'listener'
+require 'ribitz'
+
 
 module Ribitz
   module Router
